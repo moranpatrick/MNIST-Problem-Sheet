@@ -1,6 +1,26 @@
 # MNIST Problem Sheet
-## How to use this repository
+## How to use this repository?
+### Install Python
+Step 1 - Download Anaconda 3 from their website [here](https://www.anaconda.com/download/).  
+Step 2: Choose a Text editor of your choice. I recommend [Visual Studio Code](https://code.visualstudio.com/download).
 
+### Clone Repository
+Step 1 - Open a command prompt.  
+Step 2 - cd into any directory.    
+Step 3 - Then type:  
+> git clone https://github.com/moranpatrick/MNIST-Problem-Sheet   
+
+Step 4 - Then cd into that directory.
+
+## Instructions - Running the python Files
+Step 1 - If your using VS Code open the Command Terminal by pressing Ctrl + '.  
+Step 2 - Run each script by typing into the command terminal the following.  
+> python name_of_file.py  
+
+So to run the first problem simply type:  
+> python 01-mnist.py 
+
+Step 3 - If the text editor your using does not have a command terminal simply open anaconda command prompt, change directory to where the python scripts are located and repeat step 2.  
 
 ## Problem set: Read the MNIST data files
 

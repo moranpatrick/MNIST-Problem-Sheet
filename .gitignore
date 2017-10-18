@@ -106,3 +106,4 @@ venv.bak/
 # Ignore The Data Folder
 /data
 
+/png_files

@@ -8,6 +8,8 @@
 
 # Author - Patrick Moran g00179039
 import gzip # open gzip file
+import numpy as np
+import PIL.Image as pil # into pil array
 
 # This function reads labels from a specified file
 def read_labels_from_file(filename):
@@ -58,13 +60,28 @@ def read_images_from_file(filename):
         return images # Return The Image Array
 
 # This Function takes in a an image array and label array and saves the images as .png files with the correct labels
-def save_as_png(img, lab):
-    print("Creating Png's....")
+def save_as_png(lab, img):
+    # Counter 
+    i = 0
+    # Loop through the array of images
+    for img in img:
+        pngImg = img # Create a copy
+        # convert img array to pngImg using numpy so pil can be used on it.
+        pngImg = np.array(pngImg)
+        # Gives us a monochromatic image. Allows the retrieval of the RGB values.
+        pngImg = pil.fromarray(pngImg)
+        # Convert to an RGB Image
+        pngImg = pngImg.convert('RGB')
+        # Save the png file in the folder png_files and the image number and corrosponding label
+        pngImg.save("png_files/test-" + str(i) + "-" + str(lab[i]) + ".png")
+        i += 1
 
 
-# Using the Smaller Set First for quicker processing...
-labels = read_labels_from_file("data/t10k-labels-idx1-ubyte.gz")
-images = read_images_from_file("data/t10k-images-idx3-ubyte.gz")
+# Read in the images and labels in an array data structure
+labels = read_labels_from_file("data/train-labels-idx1-ubyte.gz")
+images = read_images_from_file("data/train-images-idx3-ubyte.gz")
 
-# Pass Both Arrays into the save function
+# Pass Both Arrays into the save function to save all the png files
 save_as_png(labels, images)
+
+

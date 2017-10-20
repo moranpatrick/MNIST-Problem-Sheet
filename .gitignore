@@ -102,8 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-
-# Ignore The Data Folder
+#The Data Folder
 /data
 
 /png_files
